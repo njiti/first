@@ -39,8 +39,30 @@ class _GameScreenState extends State<GameScreen> {
       return;
     }
 
-    setState() {
-      if(_board[row] [0] == _currentPlayer && _board[row][1] ==)
+    setState(() {
+      _board[row][col] = _currentPlayer;
+      //check for winner
+      if(_board[row] [0] == _currentPlayer &&
+          _board[row][1] == _currentPlayer &&
+          _board[row][2] == _currentPlayer){
+        _winner = _currentPlayer;
+        _gameOver = true;
+      } else if(_board[0] [0] == _currentPlayer &&
+          _board[row][col] == _currentPlayer &&
+          _board[row][col] == _currentPlayer) {
+        _winner = _currentPlayer;
+        _gameOver = true;
+      } else if(_board[0] [0] == _currentPlayer &&
+          _board[1][1] == _currentPlayer &&
+          _board[2][2] == _currentPlayer) {
+        _winner = _currentPlayer;
+        _gameOver = true;
+      } else if(_board[0] [2] == _currentPlayer &&
+          _board[1][1] == _currentPlayer &&
+          _board[2][0] == _currentPlayer) {
+        _winner = _currentPlayer;
+        _gameOver = true;
+      }
     });
   }
   @override
